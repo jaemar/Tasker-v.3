@@ -12,6 +12,7 @@
 <p><%= alert %></p>
 
 <% if current_user %>
+  Hi, <%= current_user.username %> | 
   <%= link_to 'logout', destroy_user_session_path %>
 <% end %>
 
