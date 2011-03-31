@@ -8,6 +8,13 @@
 </head>
 <body>
 
+<p><%= notice %></p>
+<p><%= alert %></p>
+
+<% if current_user %>
+  <%= link_to 'logout', destroy_user_session_path %>
+<% end %>
+
 <%= yield %>
 
 </body>
