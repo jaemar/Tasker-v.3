@@ -10,7 +10,28 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110331014722) do
+ActiveRecord::Schema.define(:version => 20110331022506) do
+
+  create_table "categories", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tasks", :force => true do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.integer  "category_id"
+    t.integer  "priority"
+    t.integer  "status"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.text     "remarks"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "username"
